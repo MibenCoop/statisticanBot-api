@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 
 import bot from "./routes/bot"
 
-const port = "3000";
+const port = "8080";
 const app = express();
 app.use(bodyParser.json());
 
