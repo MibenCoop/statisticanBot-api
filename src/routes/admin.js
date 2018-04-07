@@ -10,7 +10,7 @@ router.post('/setAdmin', function (req, res) {
     .then(user => {
         if (user.length === 0) {
             admin.save()
-                .then(answer => res.status(200).json({answer: "Administrator access"}))
+                .then(answer => res.status(200).json({answer: "Administrator access obtained"}))
                 .catch(err => res.status(400).json({ errors: "Server error"}))
         }
         else { 
