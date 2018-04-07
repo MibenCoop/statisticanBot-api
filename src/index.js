@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 
 import bot from "./routes/bot"
+import admin from "./routes/admin"
 
 const port = "8080";
 const app = express();
@@ -15,5 +16,6 @@ mongoose.Promise = bluebird;
 mongoose.connect("mongodb://localhost/statisticanBot");
 
 app.use("/api/bot", bot);
+app.use("/api/admin", admin);
 
 app.listen(port, () => console.log(`Running on localhost:${port}`));

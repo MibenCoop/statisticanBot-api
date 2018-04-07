@@ -5,9 +5,7 @@ const router = express.Router();
 
 router.get('/', function (req, res) {
     Message.find()
-        .then(messages => {
-            res.status(200).json( {messages} )
-        })
+        .then(messages => res.status(200).json( {messages}))
         .catch(err => res.status(400).json({errors: "Error"}))
 });
 
@@ -19,7 +17,6 @@ router.post('/', function (req, res) {
         username,
         text,
         date
-        
      } );
      msgData.save();
     res.json({answer: "api work"});
